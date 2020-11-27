@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8">
+    <script language="JavaScript">
+        
+        function doCalcReit()
+        {
+            var terms = parseInt(document.getElementById('terms').value);
+            var exam = parseInt(document.getElementById('exam').value);
+            res = document.getElementById("res");
+            if(terms < 50 || exam < 50 ){
+                res.innerHTML = "Fail";
+            }else{
+                res.innerHTML = parseInt(terms*0.6 + exam*0.4);
+            }
+        }
+    </script>
+    </head>
+<body>
+    <div class="container">
+        <h3>
+            Вычисление итоговой оценки
+        </h3>
+        <input type="text" id="terms" placeholder="Семестровый рейтинг"><br>
+        <input type="text" id="exam" placeholder="Результаты экзамена">
+        <br>
+        <button class="btn" onclick="doCalcReit()">Вычислить!</button>
+    </div>
+        <div class="circle">
+            <p class="resText">Результаты</p>
+            <p id="res" class="result">000</p>
+        </div>
+</body>
+</html>
